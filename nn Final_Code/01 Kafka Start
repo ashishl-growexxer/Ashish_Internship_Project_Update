@@ -1,0 +1,9 @@
+Kafka commands
+Start Kafka Server - 
+~/kafka_2.13-3.7.0/bin/kafka-server-start.sh ~/kafka_2.13-3.7.0/config/kraft/server.properties
+
+Create Topic - 
+kafka-topics.sh --bootstrap-server localhost:9092 --topic airfoil --create --partitions 1 --replication-factor 1
+
+List All Topics - 
+kafka-topics.sh --bootstrap-server localhost:9092 --list
