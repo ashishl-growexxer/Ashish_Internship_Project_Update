@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Price Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      font-family: 'Arimo', sans-serif;
+      background-color: #f7f9fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+    .login h1 {
+      font-family: 'Pacifico', cursive;
+      margin-bottom: 20px;
+    }
+    .login form {
+      display: flex;
+      flex-direction: column;
+    }
+    .login input, .login select, .login button {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .login button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .login button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+ <div class="login">
+  <h1>Flight Price Prediction</h1>
+
+  <!-- Main Input For Receiving Query to our ML -->
+  <form action="{{ url_for('predict')}}" method="post">
+  
+  
+      
+      <label for="Date_of_Booking">Date of Booking</label>
+      <input type="date" name="Date_of_Booking" placeholder="Date of Booking" required="required" />
+      
+      <label for="Date_of_Journey">Date of Journey</label>
+      <input type="date" name="Date_of_Journey" placeholder="Date of Journey" required="required" />
+      
+      <input type="text" name="Duration" placeholder="Duration" required="required" />
+      
+      <select name="Total_Stops" required="required">
+          <option value="" disabled selected>Select Total Stops</option>
+          <option value="non-stop">non-stop</option>
+          <option value="1-stop">1-stop</option>
+          <option value="2+-stop">2+-stop</option>
+          <option value="Missing">Not Sure</option>
+      </select>
+      
+      <select name="Company" required="required">
+          <option value="" disabled selected>Select Company</option>
+          <option value="SpiceJet">SpiceJet</option>
+          <option value="Indigo">Indigo</option>
+          <option value="GO FIRST">GO FIRST</option>
+          <option value="Air India">Air India</option>
+          <option value="AirAsia">AirAsia</option>
+          <option value="Vistara">Vistara</option>
+          <option value="AkasaAir">AkasaAir</option>
+          <option value="AllianceAir">AllianceAir</option>
+          <option value="StarAir">StarAir</option>
+          <option value="Missing">Other</option>
+      </select>
+      
+
+      <select name="Ticket_Class" required="required">
+          <option value="" disabled selected>Select Ticket Class</option>
+          <option value="ECONOMY">ECONOMY</option>
+          <option value="PREMIUMECONOMY">PREMIUMECONOMY</option>
+          <option value="BUSINESS">BUSINESS</option>
+          <option value="FIRST">FIRST</option>
+          <option value="Missing">Not SUre</option>
+      </select>
+      
+      <label for="Departure Time">Departure Time</label>
+      <input type="time" name="Departure_Time" placeholder="Departure Time" required="required" />
+      
+      <select name="Departure_Location" required="required">
+          <option value="" disabled selected>Select Departure Location</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Ahmedabad">Ahmedabad</option>
+          <option value="Missing">Other</option>
+      </select>
+      
+      <label for="Arrival Time">Arrival Time</label>
+      <input type="time" name="Arrival_Time" placeholder="Arrival Time" required="required" />
+      
+      <select name="Arrival_Location" required="required">
+          <option value="" disabled selected>Select Arrival Location</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Ahmedabad">Ahmedabad</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Other">Other</option>
+      </select>
+      
+
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  </form>
+
+  <br>
+  <br>
+  {{ prediction_price }}
+ </div>
+</body>
+</html>
+
