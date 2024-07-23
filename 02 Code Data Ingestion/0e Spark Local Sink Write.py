@@ -28,7 +28,7 @@ def main():
 
     airDF = read_kafka_topic('airfoil').alias('data')
     print(airDF)
-    query = streamWriter(airDF,'/home/growlt243/Desktop/Working Consistently/00 Data/Parquet Data/checkpoint location','/home/growlt243/Desktop/Working Consistently/00 Data/Parquet Data/data')
+    query = streamWriter(airDF,'/path/checkpoint location','path/data')
     query.awaitTermination()
  
 if __name__ == "__main__":
