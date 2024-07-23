@@ -25,9 +25,9 @@ Machine Learning
 
 UI interaction
 1. Generate an gemini pro API key.
-2. Follow steps mentioned in https://youtu.be/wFdFLWc-W4k?si=y7E6qE0B57Ry2yTT from LLM text to sql in Kris naik.
-3. Add snowflake connection and credentials for same
-4. Alter the prompt and change it as shown in nn_final_code/app.py
+2. Create an .env file and add key there .
+3. Add snowflake connection and credentials for in app.py
+4. Alter the prompt and change it as shown in app.py
 5. Run by streamlit run app.py  
 
 Data Visualisation .
