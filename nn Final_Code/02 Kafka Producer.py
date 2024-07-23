@@ -20,7 +20,7 @@ if __name__ == '__main__':
     topic = "airfoil"
     count=1
     
-    with open("/home/growlt243/Desktop/Working Consistently/00 Data/csv_data/dummy.csv") as fp:
+    with open("path/to/data.csv") as fp:
         Lines = fp.readlines()
         for line in Lines:
             producer.produce(topic, line.strip(),str(count), callback=delivery_callback)
