@@ -101,12 +101,12 @@ sdf = sdf.withColumn("Dept_hr", split(sdf["Departure_Time"], ":").getItem(0)) \
 
 
 sfOptions = {
-    "sfURL": "https://qs97852.ap-southeast-1.snowflakecomputing.com",
-    "sfUser": "Ashish",
-    "sfPassword": "Remember@1234",
-    "sfDatabase": "INTERNSHIPDATABASE",
-    "sfSchema": "PROJECTSCHEMA",
-    "sfWarehouse": "COMPUTE_WH"
+    "sfURL": "https://(url).snowflakecomputing.com",
+    "sfUser": "username",
+    "sfPassword": "Password",
+    "sfDatabase": "DATABASEName",
+    "sfSchema": "SCHEMANME",
+    "sfWarehouse": "WAREHOUSENAME"
 }
 
 sdf.write \
