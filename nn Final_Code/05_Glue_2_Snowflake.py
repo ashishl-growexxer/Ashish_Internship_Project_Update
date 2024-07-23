@@ -15,7 +15,6 @@ import json
 args = getResolvedOptions(sys.argv, ['JOB_NAME','file_name'])
 file_name = args['file_name']
 
-# "s3://project-ashish/Jars/spark-snowflake_2.12-2.16.0-spark_3.2.jar"
 
 
 sc = SparkContext()
