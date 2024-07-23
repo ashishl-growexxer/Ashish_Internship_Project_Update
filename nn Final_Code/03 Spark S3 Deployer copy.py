@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql.types import StructType, StructField, FloatType, DoubleType
 
 def main():       
-    jars_path = "/home/growlt243/Downloads/hadoop-aws-3.3.4.jar,/home/growlt243/Downloads/aws-java-sdk-bundle-1.11.1026.jar"
+    jars_path = "path/to/hadoop-aws-3.3.4.jar,path/to/aws-java-sdk-bundle-1.11.1026.jar"
     
     access_key = "-"
     secret_access_key = "-"
