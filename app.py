@@ -14,13 +14,13 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 ## Function To Load Google Gemini Model and provide queries as response
 conn = snowflake.connector.connect(
-    user= 'Ashish',
-    password='Remember@1234',
-    account='qs97852.ap-southeast-1',
-    warehouse="COMPUT_WH",
-    database='INTERNSHIPDATABASE',
-    schema='PROJECTSCHEMA',
-    role='ACCOUNTADMIN'
+    user= 'YOUR USERNAME',
+    password='YOUR PASSOWRD',
+    account='YOUR ACCOUNT',
+    warehouse="YOUR_WAREHOUSE",
+    database='YOURDATABASE',
+    schema='YOURCHEMA',
+    role='ROLE'
 )
 cur= conn.cursor()
 
