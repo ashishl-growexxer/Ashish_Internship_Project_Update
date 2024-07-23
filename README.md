@@ -10,15 +10,15 @@ Indian Airline Fare Prediction is Internship Project is an Data Science Project 
 
 How to Implement the project
 Data Ingestion and TL
-1. Install kafka on the device and run commands shown in nn_final_code/01 Kafka Start
-2. Give csv path and run nn_final_Code/02 kafka Producer
-3. Give right IAM access key and secret access key in nn_final_code/spark s3 deployer.
-4. Give appropriate paths and location to lambda and paste code written in "nn Final_Code/01 Lambda S3 trigger Glue.py"
-5. Add file_name parameter,and appropriate snowflake credentials in Glue Job and add code mentioned in "nn Final_Code/02 Glue to Snowflake.py"
+1. Install kafka on the device and run commands shown in Data_ETL/01_Kafka_Start.py
+2. Give csv path and run Data_ETL/02_kafka_Producer.py
+3. Give right IAM access key and secret access key in Data_ETL/03_Spark_s3_deployer.py
+4. Give appropriate paths and location to lambda and paste code written in "Data_ETL/04_Lambda_S3_trigger_Glue.py"
+5. Add file_name parameter,and appropriate snowflake credentials in Glue Job and add code mentioned in "Data_ETL/05_Glue_2_Snowflake.py"
 6. Run all files sequentially
 
 Machine Learning
-1. Configure files paths in "04 ML and EDA/InternshipProject(1).ipynb" and run all of them sequentially
+1. Configure files paths in "ML_EDA/InternshipProject(1).ipynb" and run all of them sequentially
 2. Create an EC2 in AWS and develop a virtual enviroment as mentioned in documentation.
 3. Alter paths mentioned in app.py and deploy it.
 4. Run it with python3 app.py
